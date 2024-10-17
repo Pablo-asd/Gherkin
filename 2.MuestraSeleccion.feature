@@ -16,5 +16,3 @@ Scenario: Agregar nuevo diagnostico
    And selecciona un diagnostico
    Then el sistema asociara el diagnostico con la historia clinica del paciente
 
-
-    
