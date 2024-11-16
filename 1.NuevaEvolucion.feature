@@ -1,16 +1,17 @@
-Feature: Agregar nueva evolucion clinica
+Feature: Evolucion clinica
     "Como medico quiero poder agregar una nueva evolucion clinica
     para dar seguimiento al paciente"
 
 
-    Scenario: Agregar Evolucion
-        Given la busqueda del paciente con su Historia Clinica
-        When  el medico selecciona el boton "Agregar Evolucion"
-        Then  se mostrara los diagnosticos previos del paciente
+    Scenario: El medico crea una nueva Evolucion clinica
+        Given el diagnostico de un paciente
+        When  el medico decide crear una evolucion
+        Then  se crea una nueva evolucion clinica asociada al diagnostico del paciente
 
-    Scenario: No existen diagnosticos previos
-        Given la busqueda del paciente con su Historia Clinica
-        And el paciente es atendido por primera vez
-        When  el medico selecciona el boton "Agregar Evolucion"
-        Then el sistema mostrara un mensaje indicando que el paciente no tiene diagnosticos previos
-        And el sistema permitira agregar nuevo diagnostico
+    Scenario: El medico agrega un  nuevo pedido de laboratorio
+        Given la evolucion clinica de un paciente
+        When cuando el medico decide crear un pedido de laboratorio
+        Then se crea el pedido de laboratorio
+        And se asocia el pedido de laboratorio a la evolucion clinica
+
+    
